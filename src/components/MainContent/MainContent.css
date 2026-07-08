@@ -1,0 +1,24 @@
+.main-content-canvas {
+  margin-left: 280px;            /* Pushes content past your sidebar panel width */
+  width: calc(100% - 280px);     /* Uses the remaining screen real estate */
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.content-viewport {
+  min-height: 100vh;             /* Each section takes up a minimum full height screen */
+  padding: 100px 10%;            /* Generous padding for clean, spacious breathing room */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* Centers all content vertically */
+  border-bottom: 1px solid rgba(179, 157, 219, 0.03); /* Micro-thin layout separation lines */
+}
+
+/* Base formatting style rules for all internal headers */
+.section-content h2 {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: var(--lavender);
+  text-shadow: 0 0 10px rgba(179, 157, 219, 0.2);
+}

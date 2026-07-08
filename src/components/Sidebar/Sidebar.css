@@ -1,0 +1,183 @@
+.side-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--panel-bg);
+  border-right: 1px solid rgba(179, 157, 219, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 40px 40px 50px;
+  z-index: 10;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--lavender);
+}
+
+.logo span {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-num {
+  font-size: 0.8rem;
+  margin-right: 20px;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+/* Hover State: Glides right smoothly and lights up lavender */
+.nav-links li:hover a {
+  color: var(--lavender);
+  transform: translateX(8px);
+  text-shadow: 0 0 8px rgba(179, 157, 219, 0.4);
+}
+
+/* Active State: Wakes up into blooming Neon Pink */
+.nav-links li.active a {
+  color: var(--neon-pink);
+  text-shadow: 0 0 12px var(--neon-pink), 0 0 20px rgba(255, 0, 127, 0.3);
+  transform: translateX(10px);
+}
+
+.nav-links li.active .nav-num {
+  color: var(--neon-pink);
+}
+
+.panel-footer {
+  color: var(--text-muted);
+  font-size: 0.65rem;       /* Microscopic font sizing */
+  letter-spacing: 1.5px;    /* Space out letters for that high-end tech look */
+  text-transform: uppercase;
+  opacity: 0.7;             /* Softens the brightness so it sits cleanly in the background */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--neon-pink);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* ========================================================
+   🍔 MOBILE ADDITIONS (TARGETING SCREENS UNDER 768px)
+   ======================================================== */
+
+/* Hide mobile trigger buttons on desktop layout by default */
+.hamburger-btn,
+.menu-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 1. Show and design the floating hamburger container button */
+  .hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 2010; /* Keeps it strictly over all content blocks */
+    padding: 0;
+  }
+
+  .burger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--lavender);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Morphing hamburger animation layers into a sharp close 'X' */
+  .hamburger-btn.open .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--neon-pink);
+  }
+
+  .hamburger-btn.open .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-btn.open .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--neon-pink);
+  }
+
+  /* 2. Re-engineer .side-panel into an off-canvas mobile drawer panel */
+  .side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto; /* Break the left-anchor alignment from desktop style rules */
+    width: 290px;
+    height: 100vh;
+    background-color: var(--panel-bg);
+    border-left: 1px solid rgba(179, 157, 219, 0.1);
+    border-right: none;
+    padding: 90px 30px 40px 40px;
+    z-index: 2000;
+    
+    /* Safely tuck drawer out of view box */
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* Slides the panel drawer cleanly back into visual frame */
+  .side-panel.mobile-show {
+    transform: translateX(0);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.7);
+  }
+
+  /* 3. Dark atmospheric overlay backdrop backdrop with blur styling */
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1995;
+  }
+}
