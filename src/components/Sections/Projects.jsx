@@ -1,5 +1,5 @@
 import React from 'react';
-import imgAnonymous from '../../assets/zeeayb-anonymous.png'; // Assuming lowercase or matched based on tree cut-off
+import imgAnonymous from '../../assets/zeeayb-anonymous.PNG'; // Assuming lowercase or matched based on tree cut-off
 import imgBank from '../../assets/zeeayb-bank.PNG';
 import imgCourier from '../../assets/zeeayb-courier.PNG';
 import imgLogistics from '../../assets/zeeayb-logistics.PNG';
