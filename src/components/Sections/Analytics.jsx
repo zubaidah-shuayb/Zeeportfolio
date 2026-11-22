@@ -1,43 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Analytics() {
-  // Simple state to simulate data filtering options a real human would code
-  const [timeframe, setTimeframe] = useState('7D');
-
   const metrics = [
-    { label: 'System Access Logs', value: '12,340', change: '+14.2%', trend: 'up' },
-    { label: 'API Request Load', value: '99.8%', change: 'Stable', trend: 'neutral' },
-    { label: 'Data Encryption Rate', value: '256-bit AES', change: 'Military Grade', trend: 'secure' }
+    { label: 'Sample Event Volume', value: '12,340', change: 'Illustrative', trend: 'up' },
+    { label: 'Sample API Availability', value: '99.8%', change: 'Illustrative', trend: 'neutral' },
+    { label: 'Security Configuration', value: 'Project-specific', change: 'Not measured here', trend: 'secure' }
   ];
 
   return (
     <div className="section-content analytics-dashboard-view">
-      <div className="terminal-tag">// SYSTEM_METRICS // OPERATIONAL_INTELLIGENCE</div>
-      <h2>05 // DATA_ANALYTICS</h2>
+      <div className="terminal-tag">// DASHBOARD_CONCEPT // SAMPLE_DATA</div>
+      <h2>05 // ANALYTICS_PREVIEW</h2>
 
-      {/* Control Bar */}
       <div className="dashboard-controls">
         <div className="db-title-group">
-          <h3>Zeeayb Core Intelligence Engine</h3>
-          <p>Real-time analytics across deployed environments</p>
-        </div>
-        <div className="timeframe-buttons">
-          {['24H', '7D', '30D'].map((time) => (
-            <button 
-              key={time} 
-              className={`tf-btn ${timeframe === time ? 'active' : ''}`}
-              onClick={() => setTimeframe(time)}
-            >
-              {time}
-            </button>
-          ))}
+          <h3>ZEEAYB Dashboard Concept</h3>
+          <p>Illustrative interface with sample values, not connected to live production telemetry.</p>
         </div>
       </div>
 
-      {/* Metrics Cards Grid */}
       <div className="analytics-cards-grid">
-        {metrics.map((metric, i) => (
-          <div key={i} className="analytics-stat-card">
+        {metrics.map((metric) => (
+          <div key={metric.label} className="analytics-stat-card">
             <span className="stat-label">{metric.label}</span>
             <div className="stat-main">
               <span className="stat-value">{metric.value}</span>
@@ -48,14 +32,12 @@ export default function Analytics() {
         ))}
       </div>
 
-      {/* Mock Visual Graph Area */}
       <div className="analytics-graph-container">
         <div className="graph-header">
-          <span>Unified Data Ingestion Throughput (Normalized)</span>
-          <span className="live-pulse"><span className="pulse-dot"></span> LIVE STREAMING</span>
+          <span>Illustrative activity pattern</span>
+          <span className="live-pulse">SAMPLE VISUALIZATION</span>
         </div>
-        <div className="mock-graph-body">
-          {/* Simulated human-coded CSS data bar graph rows */}
+        <div className="mock-graph-body" aria-label="Illustrative monthly activity bars">
           <div className="bar-wrapper"><div className="bar" style={{ height: '40%' }}></div><span>Jan</span></div>
           <div className="bar-wrapper"><div className="bar" style={{ height: '65%' }}></div><span>Feb</span></div>
           <div className="bar-wrapper"><div className="bar" style={{ height: '50%' }}></div><span>Mar</span></div>
