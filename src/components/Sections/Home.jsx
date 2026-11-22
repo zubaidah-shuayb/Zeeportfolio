@@ -4,24 +4,26 @@ export default function Home() {
   return (
     <div className="section-content home-hero">
       <div className="terminal-tag">// ZEEAYB // </div>
-      
+
       <h1>
-     <span className="highlight">ZUBAIDAH SHUAYB</span>
+        <span className="highlight">ZUBAIDAH SHUAYB</span>
       </h1>
-      
+
       <p className="subtitle">
-        Full-Stack Developer & Data Analyst
+        Full-Stack Developer & Product Builder
       </p>
-      
+
       <div className="hero-description">
         <p>
-          <strong style={{ color: 'var(--neon-pink)' }}>[ FULL-STACK WEB & MOBILE ]</strong> Architecture, development, and scaling of modern systems. Proficient across frontend layout engines, backend servers, and cross-platform mobile runtimes: 
-          <span style={{ color: 'var(--lavender)' }}> JavaScript (ES6+), TypeScript, React.js, Next.js, Vue.js, HTML5/CSS3, TailwindCSS, Node.js, Express.js, Python (Django, Flask), Ruby on Rails, PHP, RESTful APIs, GraphQL, React Native, and Flutter.</span>
+          <strong style={{ color: 'var(--neon-pink)' }}>[ PRODUCT ENGINEERING ]</strong>{' '}
+          I build end-to-end digital products, from responsive interfaces and backend APIs to authentication, data models, integrations, and deployment.
+          <span style={{ color: 'var(--lavender)' }}> React, TypeScript, JavaScript, Next.js, Vite, Tailwind CSS, Node.js, Express, REST APIs, and Supabase.</span>
         </p>
-        
+
         <p style={{ marginTop: '15px' }}>
-          <strong style={{ color: 'var(--neon-pink)' }}>[ DATA ENGINEERING & ANALYTICS ]</strong> Designing analytical engines, live pipelines, and relational database systems to process complex data streams: 
-          <span style={{ color: 'var(--lavender)' }}> Python (Pandas, NumPy, Scikit-Learn), R, SQL (PostgreSQL, MySQL, SQLite), NoSQL (MongoDB, Redis), Apache Kafka, Spark, Tableau, Power BI, Excel, and automated data visualization pipelines.</span>
+          <strong style={{ color: 'var(--neon-pink)' }}>[ DATA & INTEGRATIONS ]</strong>{' '}
+          I work with relational and document databases, application data flows, and third-party services to turn product requirements into working systems.
+          <span style={{ color: 'var(--lavender)' }}> PostgreSQL, SQL, MongoDB, Supabase, AI APIs, maps and routing services, and payment integrations.</span>
         </p>
       </div>
 

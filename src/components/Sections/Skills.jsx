@@ -3,20 +3,20 @@ import React from 'react';
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Frontend Architectures",
-      tags: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "UI/UX Engineering"]
+      category: "Frontend Engineering",
+      tags: ["React", "Next.js", "TypeScript", "JavaScript", "Vite", "Tailwind CSS", "HTML", "CSS", "Three.js", "React Three Fiber"]
     },
     {
-      category: "Backend & Systems",
-      tags: ["Node.js", "Express", "RESTful APIs", "GraphQL", "WebSockets (Socket.io)"]
+      category: "Backend & APIs",
+      tags: ["Node.js", "Express.js", "REST APIs", "Supabase Edge Functions", "Authentication", "API Integrations"]
     },
     {
-      category: "Data & Storage",
-      tags: ["MongoDB", "PostgreSQL", "Firebase Realtime DB", "Redis", "Data Modeling"]
+      category: "Databases & Data",
+      tags: ["PostgreSQL", "Supabase", "SQL", "MongoDB", "Data Modeling", "Row Level Security"]
     },
     {
-      category: "DevOps & Security",
-      tags: ["Docker", "Git/GitHub", "JWT Authentication", "SSL/TLS", "CI/CD Pipelines"]
+      category: "Delivery & Tools",
+      tags: ["Git", "GitHub", "VS Code", "Vercel", "Automated Testing", "Production Deployment"]
     }
   ];
 
@@ -24,21 +24,21 @@ export default function Skills() {
     <div className="section-content skills-matrix-view">
       <div className="terminal-tag">// ENGINEERED_CAPABILITIES // CORE_TECH_STACK</div>
       <h2>06 // CORE_SKILLS</h2>
-      
+
       <p className="skills-subtitle">
-        A curated stack optimized for speed, precision real-time data flow, and bank-grade digital security.
+        A practical product-development stack spanning frontend engineering, backend services, data, integrations, and deployment.
       </p>
 
       <div className="skills-grid">
-        {skillCategories.map((group, index) => (
-          <div key={index} className="skills-card">
+        {skillCategories.map((group) => (
+          <div key={group.category} className="skills-card">
             <div className="skills-card-header">
               <span className="card-dot"></span>
               <h3>{group.category}</h3>
             </div>
             <div className="skills-tag-container">
-              {group.tags.map((tag, i) => (
-                <span key={i} className="skill-tag">
+              {group.tags.map((tag) => (
+                <span key={tag} className="skill-tag">
                   {tag}
                 </span>
               ))}
